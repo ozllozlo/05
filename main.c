@@ -3,19 +3,38 @@
 
 int main(int argc, char *argv[])
 {
-  int x;
-  int i;
-  int sum=0;
+  int a, b;
+  char op;
+  int result;
   
-  printf("Input an integer :");
-  scanf("%d", &x);
-  
-  for(i=1; i<=x; i++) {
-      sum= sum + i;
-      }
-      
-      printf("The result is: %i\n", sum);
-  
+  printf("Enter the calculation :");
+  scanf("%i %c %i", &a, &op, &b);
+
+switch (op){
+       case '+':
+            result=a+b;
+            printf("%i%c%i=%i\n", a, op, b, result);
+            break;
+            case'-':
+                    result=a-b;
+                    printf("%i%c%i=%i\n", a, op, b, result);
+            break;
+            case'*':
+                    result=a*b;
+                    printf("%i%c%i=%i\n", a, op, b, result);
+            break;
+            case'/':
+                    if(b!=0){
+                    result=a/b;
+                    printf("%i%c%i=%i\n", a, op, b, result);
+                    } else {
+                           printf("Error: Division by zero!\n");
+                           }
+            break;
+            default:
+                    printf("Error: Invalid operator!\n");
+                    }    
+                    printf("= %i", result);
   
   system("PAUSE");	
   return 0;
